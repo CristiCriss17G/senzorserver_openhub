@@ -8,8 +8,8 @@ include_once 'database.php';
     <form role="form" method="post" action="./post_request.php">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <div class="input-group mb-2">
-                    <label for="regdate" class="input-group-text">Registry date</label>
+                <div class="mb-2">
+                    <label for="regdate" class="form-label">Registry date</label>
                     <input type="datetime-local" class="form-control" id="regdate" name="regdate">
                 </div>
                 <div class="form-check">
@@ -19,9 +19,9 @@ include_once 'database.php';
                     </label>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-2">
                 <label for="regdata" class="form-label">Registry data</label>
-                <input type="text" class="form-control" id="regdata" name="regdata" required>
+                <textarea class="form-control" id="regdata" name="regdata" required rows="3"></textarea>
             </div>
             <input type="hidden" name="fromhome" value="1">
             <div class="col-md-2"><button type="submit" class="btn btn-primary">Submit</button></div>
@@ -47,7 +47,6 @@ include_once 'database.php';
                     <?php
 
                     $db = new DB();
-                    $db->connect();
                     $result = $db->query('SELECT * FROM registry');
                     foreach ($result as $row) {
                         echo '<tr>';
@@ -57,21 +56,6 @@ include_once 'database.php';
                         echo '</tr>';
                     }
                     ?>
-                    <!-- <tr>
-                        <th scope="row">1</th>
-                        <td>2021-09-01 12:00:00</td>
-                        <td>Test data</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>2021-09-01 12:00:00</td>
-                        <td>Test data</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>2021-09-01 12:00:00</td>
-                        <td>Test data</td>
-                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -79,6 +63,6 @@ include_once 'database.php';
 </div>
 
 
-<?php 
+<?php
 include 'footer.php';
 ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // Include database class
 require_once 'database.php';
@@ -14,12 +14,13 @@ if (isset($_POST['regdata'])) {
     $regdate = $_POST['regdate'];
     $regdata = $_POST['regdata'];
     if (empty($regdate)) {
+        date_default_timezone_set('Europe/Bucharest');
         $regdate = date('Y-m-d H:i:s');
     }
     $db->insert('registry', array('regdate' => $regdate, 'regdata' => $regdata), array('%s', '%s'));
 }
 
-if(isset($_POST['fromhome'])) {
+if (isset($_POST['fromhome'])) {
     header('Location: ./');
     exit;
 }
