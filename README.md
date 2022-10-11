@@ -10,7 +10,7 @@ To use the server, you need to have [Node.js](https://nodejs.org/en/) installed.
 npm install
 ```
 
-In you preferred database, create a database by following in the [`create_database.sql`](create_database.sql) file.
+In you preferred database, create a database by executing the commands in the [`create_database.sql`](create_database.sql) file in a SQL terminal.
 
 Then run the create table script from [database_create.php](database_create.php), which can also be seen in the menu of [index.php](index.php).
 
