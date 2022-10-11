@@ -15,11 +15,11 @@ The server runs on PHP and can be eun either on a dedicated server or on a local
 
 To send data to the server, you need to send a POST request to the server, to the following url:
 
-    <your_ip_address>/senzorserver/post_request.php
+    <your_ip_address>/senzorserver_openhub/post_request.php
 
 Or a Get request to the following url:
 
-    <your_ip_address>/senzorserver/get_request.php
+    <your_ip_address>/senzorserver_openhub/get_request.php
 
 The request should contain the following data:
 
@@ -31,7 +31,7 @@ The request should contain the following data:
 
 The data can be visualized by opening the following url in a browser:
 
-    <your_ip_address>/senzorserver/index.php
+    <your_ip_address>/senzorserver_openhub/index.php
 
 On this page you can also add new data.
 
