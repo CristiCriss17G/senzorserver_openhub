@@ -5,23 +5,18 @@ include_once 'database.php';
 ?>
 
 <div class="container mt-5 py-5">
-    <form role="form" method="post" action="./post_request.php">
+    <form role="form" method="get" action="./get_request.php">
         <div class="row align-items-center">
             <div class="col-md-4">
                 <div class="mb-2">
                     <label for="regdate" class="form-label">Registry date</label>
-                    <input type="datetime-local" class="form-control" id="regdate" name="regdate">
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" name="flexCheckChecked" checked>
-                    <label class="form-check-label" for="flexCheckChecked">
-                        Use NOW time
-                    </label>
+                    <input type="datetime-local" class="form-control" id="regdate" name="regdate" aria-describedby="datehelp">
+                    <div class="form-text" id="datehelp">To use the current time leave empty</div>
                 </div>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="regdata" class="form-label">Registry data</label>
-                <textarea class="form-control" id="regdata" name="regdata" required rows="3"></textarea>
+                <textarea class="form-control" id="regdata" name="regdata" rows="3"></textarea>
             </div>
             <input type="hidden" name="fromhome" value="1">
             <div class="col-md-2"><button type="submit" class="btn btn-primary">Submit</button></div>
@@ -42,8 +37,6 @@ include_once 'database.php';
                     </tr>
                 </thead>
                 <tbody>
-
-
                     <?php
 
                     $db = new DB();
