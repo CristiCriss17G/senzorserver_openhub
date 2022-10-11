@@ -1,7 +1,7 @@
 <?php
 define('DB_USER', 'senzorserverapp');
-define('DB_PASS', 'SenzorServerApp2022!');
-define('DB_NAME', 'senzorserver');
+define('DB_PASS', 'SenzorServerApp2022');
+define('DB_NAME', 'senzorserverapp');
 define('DB_HOST', 'localhost');
 define('DB_ENCODING', '');
 
@@ -12,10 +12,11 @@ if (!class_exists('DB')) {
         {
             return new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         }
+        
         public function create_table()
         {
             $conn = $this->connect();
-            $sql = "CREATE TABLE IF NOT EXISTS `senzorserver`.`registry` ( `id` INT NOT NULL AUTO_INCREMENT , `regdate` DATETIME NOT NULL , `regdata` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+            $sql = "CREATE TABLE IF NOT EXISTS `registry` ( `id` INT NOT NULL AUTO_INCREMENT , `regdate` DATETIME NOT NULL , `regdata` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
             $conn->query($sql);
             $conn->close();
         }

@@ -9,6 +9,11 @@ To use the server, you need to have [Node.js](https://nodejs.org/en/) installed.
 ```bash
 npm install
 ```
+
+In you preferred database, create a database by following in the [`create_database.sql`](create_database.sql) file.
+
+Then run the create table script from [database_create.php](database_create.php), which can also be seen in the menu of [index.php](index.php).
+
 The server runs on PHP and can be eun either on a dedicated server or on a local machine (_I used XAMPP_).
 
 ## Send data
