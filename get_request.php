@@ -3,8 +3,14 @@
 // Include database class
 require_once 'database.php';
 
+// Include local database class
+require_once 'local_db.php';
+
 // Create database object
-$db = new DB();
+// $db = new DB();
+
+// Create local database object
+$db = new local_db();
 
 // conect
 // $db->connect();
@@ -17,7 +23,17 @@ if (isset($_GET['regdata'])) {
         date_default_timezone_set('Europe/Bucharest');
         $regdate = date('Y-m-d H:i:s');
     }
-    $db->insert('registry', array('regdate' => $regdate, 'regdata' => $regdata), array('%s', '%s'));
+    // create associative array with the values
+    $data = array(
+        'regdate' => $regdate,
+        'regdata' => $regdata
+    );
+
+    // insert data
+    $db->write($data);
+
+
+    // $db->insert('registry', array('regdate' => $regdate, 'regdata' => $regdata), array('%s', '%s'));
 }
 
 if (isset($_GET['fromhome'])) {

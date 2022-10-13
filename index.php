@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
-include_once 'database.php';
+// include_once 'database.php';
+include_once 'local_db.php';
 
 ?>
 
@@ -39,13 +40,23 @@ include_once 'database.php';
                 <tbody>
                     <?php
 
-                    $db = new DB();
-                    $result = $db->query('SELECT * FROM registry');
-                    foreach ($result as $row) {
+                    // $db = new DB();
+                    // $result = $db->query('SELECT * FROM registry');
+                    // foreach ($result as $row) {
+                    //     echo '<tr>';
+                    //     echo '<th scope="row">' . $row->id . '</th>';
+                    //     echo '<td>' . $row->regdate . '</td>';
+                    //     echo '<td>' . $row->regdata . '</td>';
+                    //     echo '</tr>';
+                    // }
+
+                    $db = new local_db();
+                    $result = $db->read();
+                    foreach ($result as $id => $row) {
                         echo '<tr>';
-                        echo '<th scope="row">' . $row->id . '</th>';
-                        echo '<td>' . $row->regdate . '</td>';
-                        echo '<td>' . $row->regdata . '</td>';
+                        echo '<th scope="row">' . $id . '</th>';
+                        echo '<td>' . $row['regdate'] . '</td>';
+                        echo '<td>' . $row['regdata'] . '</td>';
                         echo '</tr>';
                     }
                     ?>
