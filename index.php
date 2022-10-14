@@ -11,7 +11,7 @@ include_once 'local_db.php';
             <div class="col-md-4">
                 <div class="mb-2">
                     <label for="regdate" class="form-label">Registry date</label>
-                    <input type="datetime-local" class="form-control" id="regdate" name="regdate" aria-describedby="datehelp">
+                    <input type="datetime-local" step="1" class="form-control" id="regdate" name="regdate" aria-describedby="datehelp">
                     <div class="form-text" id="datehelp">To use the current time leave empty</div>
                 </div>
             </div>

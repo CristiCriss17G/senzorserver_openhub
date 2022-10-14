@@ -1,7 +1,7 @@
 <?php
 
 // Include database class
-require_once 'database.php';
+// require_once 'database.php';
 
 // Include local database class
 require_once 'local_db.php';
@@ -22,6 +22,9 @@ if (isset($_GET['regdata'])) {
     if (empty($regdate)) {
         date_default_timezone_set('Europe/Bucharest');
         $regdate = date('Y-m-d H:i:s');
+    }
+    else{
+        $regdate = str_replace('T', ' ', $regdate);
     }
     // create associative array with the values
     $data = array(

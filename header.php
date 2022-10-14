@@ -29,9 +29,6 @@ if (!isset($GLOBALS['site_title'])) {
               <a class="nav-link" aria-current="page" href="./">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Database settings</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./post_request.php">Post request</a>
             </li>
             <li class="nav-item">
