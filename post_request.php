@@ -35,6 +35,22 @@ if (isset($_POST['regdata'])) {
     // insert data
     $db->write($data);
 }
+else {
+    // data can be json
+    $data = json_decode(file_get_contents('php://input'), true);
+    if (isset($data['regdata'])) {
+        if (empty($data['regdate'])) {
+            date_default_timezone_set('Europe/Bucharest');
+            $data['regdate'] = date('Y-m-d H:i:s');
+        }
+        else {
+            $data['regdate'] = str_replace('T', ' ', $data['regdate']);
+        }
+
+        // insert data
+        $db->write($data);
+    }
+}
 
 if (isset($_POST['fromhome'])) {
     header('Location: ./');

@@ -19,6 +19,7 @@ $db = new local_db();
 if (isset($_GET['regdata'])) {
     $regdate = $_GET['regdate'];
     $regdata = $_GET['regdata'];
+    $reggps = $_GET['reggps'];
     if (empty($regdate)) {
         date_default_timezone_set('Europe/Bucharest');
         $regdate = date('Y-m-d H:i:s');
@@ -28,8 +29,9 @@ if (isset($_GET['regdata'])) {
     }
     // create associative array with the values
     $data = array(
-        'regdate' => $regdate,
-        'regdata' => $regdata
+        'regdate' => base64_encode($regdate),
+        'regdata' => base64_encode($regdata),
+        'reggps' => base64_encode($reggps)
     );
 
     // insert data
