@@ -16,7 +16,7 @@ $db = new local_db();
 // $db->connect();
 
 // insert post data and if regdate is empty, use NOW()
-if (isset($_GET['regdata'])) {
+if (count($_GET) > 0) {
     $regdate = $_GET['regdate'];
     $regdata = $_GET['regdata'];
     $reggps = $_GET['reggps'];

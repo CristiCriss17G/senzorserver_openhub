@@ -16,7 +16,7 @@ $db = new local_db();
 // $db->connect();
 
 // insert post data and if regdate is empty, use NOW()
-if (isset($_POST['regdata'])) {
+if (count($_POST) > 0) {
     $regdate = $_POST['regdate'];
     $regdata = $_POST['regdata'];
     if (empty($regdate)) {
