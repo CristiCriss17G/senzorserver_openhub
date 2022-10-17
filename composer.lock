@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "134dd79cd81ff159cd96bfe72cd2d62c",
+    "packages": [
+        {
+            "name": "netsilik/peppered-passwords",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Netsilik/PepperedPasswords.git",
+                "reference": "b7d0075bc1cbcae0e6298ffa6e6a5a38930fe810"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Netsilik/PepperedPasswords/zipball/b7d0075bc1cbcae0e6298ffa6e6a5a38930fe810",
+                "reference": "b7d0075bc1cbcae0e6298ffa6e6a5a38930fe810",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Netsilik\\Lib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacco-V",
+                    "homepage": "http://netsilik.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Secure password hashing using HMAC before (BCrypt) Hash.",
+            "homepage": "https://gitlab.com/Netsilik/PepperedPasswords",
+            "keywords": [
+                "password",
+                "password hashing",
+                "security"
+            ],
+            "support": {
+                "issues": "https://github.com/Netsilik/PepperedPasswords/issues",
+                "source": "https://github.com/Netsilik/PepperedPasswords/tree/2.0.0"
+            },
+            "time": "2021-01-26T13:10:27+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

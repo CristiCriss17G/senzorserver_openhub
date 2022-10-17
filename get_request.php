@@ -4,7 +4,7 @@
 // require_once 'database.php';
 
 // Include local database class
-require_once 'local_db.php';
+require_once './database/local_db.php';
 
 // Create database object
 // $db = new DB();
@@ -17,14 +17,13 @@ $db = new local_db();
 
 // insert post data and if regdate is empty, use NOW()
 if (count($_GET) > 0) {
-    $regdate = $_GET['regdate'];
-    $regdata = $_GET['regdata'];
-    $reggps = $_GET['reggps'];
+    $regdate = isset($_GET['regdate']) ? $_GET['regdate'] : '';
+    $regdata = isset($_GET['regdata']) ? $_GET['regdata'] : '';
+    $reggps = isset($_GET['reggps']) ? $_GET['reggps'] : '';
     if (empty($regdate)) {
         date_default_timezone_set('Europe/Bucharest');
         $regdate = date('Y-m-d H:i:s');
-    }
-    else{
+    } else {
         $regdate = str_replace('T', ' ', $regdate);
     }
     // create associative array with the values

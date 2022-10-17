@@ -1,0 +1,4 @@
+#data-entries.no-name tbody tr td:first-of-type,
+#data-entries.no-name thead tr th.name-api {
+  display: none;
+}
