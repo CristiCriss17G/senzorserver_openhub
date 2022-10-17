@@ -12,6 +12,7 @@ if (!isset($GLOBALS['site_title'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $GLOBALS['site_title']; ?></title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -36,6 +37,9 @@ if (!isset($GLOBALS['site_title'])) {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./database_create.php">Create database</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./api_generator.php">API Key generator</a>
             </li>
           </ul>
         </div>

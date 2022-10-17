@@ -1,0 +1,5 @@
+{
+    "require": {
+        "netsilik/peppered-passwords": "^2.0"
+    }
+}

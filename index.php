@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
 // include_once 'database.php';
-include_once 'local_db.php';
+include_once './database/local_db.php';
 
 ?>
 
 <div class="container mt-5 py-5">
-    <form role="form" method="get" action="./get_request.php">
+    <form role="form" method="post" action="./post_request.php">
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <div class="mb-2">
@@ -20,6 +20,7 @@ include_once 'local_db.php';
                 <textarea class="form-control" id="regdata" name="regdata" rows="3"></textarea>
             </div>
             <input type="hidden" name="fromhome" value="1">
+            <input type="hidden" id="apikey" name="apikey" value="1">
             <div class="col-lg-3 mb-2">
                 <label for="reggps" class="form-label">Registry GPS</label>
                 <input type="text" class="form-control" id="reggps" name="reggps" aria-describedby="gpsHelp">
@@ -32,51 +33,33 @@ include_once 'local_db.php';
 <hr>
 
 <div class="container">
+    <div class="row mb-4">
+        <div class="col-md-12 d-flex justify-content-between">
+            <button id="toggle-names" class="btn btn-outline-info">Show names</button>
+            <button id="empty-database" class="btn btn-outline-danger">Empty Database</button>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped" id="data-entries" >
+            <table class="table table-striped no-name" id="data-entries">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
+                        <th scope="col" class="name-api">Name</th>
                         <th scope="col">Registry date</th>
                         <th scope="col">Registry data</th>
                         <th scope="col">Registry GPS</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<script>
-// get content from show_update.php every 10 seconds and put it in the table with the id data-entries without jquery
-const tableBody = document.getElementById('data-entries').getElementsByTagName('tbody')[0];
-// curent date in seconds
-const now = Math.floor(Date.now() / 1000);
-const refreshAndGetData = () => {
-    fetch('./show_update.php')
-    .then(response => response.text())
-    .then(data => {
-        if(tableBody.innerHTML !== data) {
-            tableBody.innerHTML = data;
-            clearInterval(refreshInterval);
-            console.log(`fast update since ${Math.floor(Date.now() / 1000) - now} seconds`);
-            refreshInterval = setInterval(refreshAndGetData, 2000);
-        }
-        else {
-            clearInterval(refreshInterval);
-            console.log(`slow update since ${Math.floor(Date.now() / 1000) - now} seconds`);
-            refreshInterval = setInterval(refreshAndGetData, 10000);
-        }
-    });
-}
-refreshAndGetData();
-let refreshInterval = setInterval(refreshAndGetData, 10000);
-
-</script>
+<script src="./assets/js/homeUpdate.js"></script>
 
 <?php
 include 'footer.php';

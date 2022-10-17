@@ -1,12 +1,22 @@
 <?php
-define('DB_FILE', 'local_db.txt');
+define('DB_FILE', dirname(__FILE__) . '/databases/local_db.txt');
 
 if (!class_exists('local_db')) {
     class local_db
     {
+        private $file;
+        private $mode;
+
+        // constructor
+        public function __construct($_file = DB_FILE, $_mode = 'a+')
+        {
+            $this->file = $_file;
+            $this->mode = $_mode;
+        }
+
         public function connect()
         {
-            return fopen(DB_FILE, 'a+');
+            return fopen($this->file, $this->mode);
         }
 
         /**
@@ -36,6 +46,14 @@ if (!class_exists('local_db')) {
             }
             fclose($db);
             return $lines;
+        }
+
+        /**
+         * Function to delete the database file
+         */
+        public function delete()
+        {
+            unlink($this->file);
         }
     }
 }
