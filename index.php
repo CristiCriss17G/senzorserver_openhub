@@ -1,7 +1,7 @@
 <?php
-include 'header.php';
+include dirname(__FILE__) . '/header.php';
 // include_once 'database.php';
-include_once './database/local_db.php';
+include_once dirname(__FILE__) . '/database/local_db.php';
 
 ?>
 
@@ -62,5 +62,5 @@ include_once './database/local_db.php';
 <script src="./assets/js/homeUpdate.js"></script>
 
 <?php
-include 'footer.php';
+include dirname(__FILE__) . '/footer.php';
 ?>

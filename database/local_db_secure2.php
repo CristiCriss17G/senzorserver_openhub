@@ -3,8 +3,8 @@ if (!defined('DB_FILE')) {
     define('DB_FILE', dirname(__FILE__) . '/databases/local_db.txt');
 }
 
-if (!class_exists('local_db')) {
-    class local_db
+if (!class_exists('local_db_secure')) {
+    class local_db_secure
     {
         private $file;
         private $mode;
@@ -28,7 +28,7 @@ if (!class_exists('local_db')) {
         public function write($data)
         {
             $db = $this->connect();
-            $line = serialize($data);
+            $line = base64_encode(serialize($data));
             fwrite($db, $line . PHP_EOL);
             fclose($db);
         }
@@ -44,7 +44,7 @@ if (!class_exists('local_db')) {
             $lines = array();
             while ($line = fgets($db)) {
                 // add to each line the line number
-                $lines[$i++] = unserialize($line);
+                $lines[$i++] = unserialize(base64_decode($line));
             }
             fclose($db);
             return $lines;

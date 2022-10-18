@@ -1,6 +1,6 @@
 <?php
 // require local_db.php
-require_once './database/local_db.php';
+require_once dirname(__FILE__) . '/database/local_db.php';
 
 
 $db = new local_db();

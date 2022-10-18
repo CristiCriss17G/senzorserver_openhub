@@ -1,6 +1,6 @@
 <?php
 
-require_once 'local_db.php';
+require_once dirname(__FILE__) . '/local_db.php';
 
 if (!class_exists('local_db_secure')) {
     class local_db_secure extends local_db
@@ -9,6 +9,7 @@ if (!class_exists('local_db_secure')) {
         // constructor
         public function __construct($_file, $_mode)
         {
+            echo method_exists('local_db','__construct')?'yes':'no';
             // call parent constructor
             parent::__construct($_file, $_mode);
         }
