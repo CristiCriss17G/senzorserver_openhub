@@ -1,14 +1,13 @@
 <?php
 
-// Include database class
-require_once './database/local_db_secure.php';
-
 // include header
-include './header.php';
+include dirname(__FILE__) . '/header.php';
+// Include database class
+require_once dirname(__FILE__) . '/database/local_db_secure2.php';
+
 
 // Create database object
-$db = new local_db_secure('./database/databases/db_api.txt', 'a+');
-
+$db = new local_db_secure(dirname(__FILE__) .'/database/databases/db_api.txt', 'a+');
 
 ?>
 
@@ -65,4 +64,4 @@ if (isset($_POST['create'])) {
 }
 
 // include footer
-include './footer.php';
+include dirname(__FILE__) . '/footer.php';

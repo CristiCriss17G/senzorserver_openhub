@@ -4,7 +4,7 @@
 // require_once 'database.php';
 
 // Include local database class
-require_once './database/local_db.php';
+require_once dirname(__FILE__) . '/database/local_db.php';
 
 // Create database object
 // $db = new DB();

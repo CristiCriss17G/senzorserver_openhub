@@ -51,18 +51,17 @@ const refreshAndGetData = () => {
     .then((response) => response.text())
     .then((data) => {
       if (tableBody.innerHTML !== data) {
-        console.log(tableBody.innerHTML);
         tableBody.innerHTML = data;
         clearInterval(refreshInterval);
-        console.log(
-          `fast update since ${Math.floor(Date.now() / 1000) - now} seconds`
-        );
+        // console.log(
+        //   `fast update since ${Math.floor(Date.now() / 1000) - now} seconds`
+        // );
         refreshInterval = setInterval(refreshAndGetData, 2000);
       } else {
         clearInterval(refreshInterval);
-        console.log(
-          `slow update since ${Math.floor(Date.now() / 1000) - now} seconds`
-        );
+        // console.log(
+        //   `slow update since ${Math.floor(Date.now() / 1000) - now} seconds`
+        // );
         refreshInterval = setInterval(refreshAndGetData, 10000);
       }
     });

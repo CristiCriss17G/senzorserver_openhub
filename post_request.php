@@ -4,19 +4,20 @@
 // require_once 'database.php';
 
 // Include local database class
-require_once './database/local_db.php';
+require_once dirname(__FILE__) . '/database/local_db.php';
 
 // Include local database secure class
-require_once './database/local_db_secure.php';
+require_once dirname(__FILE__) . '/database/local_db_secure2.php';
 
 // Create database object
 // $db = new DB();
+
 
 // Create local database object 
 $db = new local_db();
 
 // Create local database secure object
-$db_secure = new local_db_secure('./database/databases/db_api.txt', 'a+');
+$db_secure = new local_db_secure(dirname(__FILE__) .'/database/databases/db_api.txt', 'a+');
 
 // conect
 // $db->connect();
