@@ -1,6 +1,7 @@
 <?php
 require_once 'root_vars.php';
 
+$GLOBALS['site_title'] = 'API Key Generator - Sensor server';
 
 // include header
 include ABSPATH . 'header.php';

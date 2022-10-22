@@ -34,9 +34,9 @@ if (!isset($GLOBALS['site_title'])) {
             <li class="nav-item">
               <a class="nav-link" href="./post_request.php">Post request</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./get_request.php">Get request</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="./database_create.php">Create database</a>
             </li>
