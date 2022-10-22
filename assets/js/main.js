@@ -1,8 +1,25 @@
 // add apikey to form
 const apikey =
-  "a6abaaf667aae7991572ad935876a95321c582cad822c427fc2a8d77434ea20f";
+  "3bbec1ff4d460ba783e4861ce6e0993d2a9fec762f59cebd437a49b9a7fbc3d5";
 const apiInput = document.querySelector("#apikey");
 apiInput.value = apikey;
+
+// prefill gps coordinates
+const gpsLat = document.getElementById("GPS_lat");
+const gpsLon = document.getElementById("GPS_lon");
+
+// get gps coordinates
+const getLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(position => {
+      gpsLat.value = position.coords.latitude;
+      gpsLon.value = position.coords.longitude;
+    });
+  } else {
+    gpsLat.value = "Geolocation is not supported by this browser.";
+  }
+}
+document.addEventListener("DOMContentLoaded", getLocation);
 
 // toggle names button
 const toggleNames = document.getElementById("toggle-names");

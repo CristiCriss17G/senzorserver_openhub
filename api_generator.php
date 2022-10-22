@@ -1,13 +1,9 @@
 <?php
+require_once 'root_vars.php';
+
 
 // include header
-include dirname(__FILE__) . '/header.php';
-// Include database class
-require_once dirname(__FILE__) . '/database/local_db_secure2.php';
-
-
-// Create database object
-$db = new local_db_secure(dirname(__FILE__) .'/database/databases/db_api.txt', 'a+');
+include ABSPATH . 'header.php';
 
 ?>
 
@@ -25,26 +21,35 @@ $db = new local_db_secure(dirname(__FILE__) .'/database/databases/db_api.txt', '
 <?php
 // If the form is submitted
 if (isset($_POST['create'])) {
+    // Create database object
+    $db = new my_sqlite3();
+
     // Create a new api key
     $newKey = bin2hex(random_bytes(32));
+
     // Get the name from the form
     $name = $_POST['name'];
+
     // check if the name already exists
     $check = false;
-    $keys = $db->read();
-    foreach ($keys as $key) {
-        if ($key['name'] == $name) {
-            $check = true;
-            break;
-        }
+    $keys = $db->get_row("SELECT sensor_name FROM sensors WHERE sensor_name = '$name'");
+    if ($keys) {
+        $check = true;
     }
 
     // Insert the api key and the name into the database if unique
     if (!$check) {
-        $db->write(array('name' => $name, 'key' => $newKey));
+        $db->insert('sensors', array(
+            'sensor_name' => $name,
+            'api_key' => base64_encode($newKey)
+        ));
     } else {
         $newKey = 'Name already exists';
     }
+
+    // close the database connection
+    $db->close();
+
     // Show the api key
 ?>
 
@@ -64,4 +69,4 @@ if (isset($_POST['create'])) {
 }
 
 // include footer
-include dirname(__FILE__) . '/footer.php';
+include ABSPATH . 'footer.php';

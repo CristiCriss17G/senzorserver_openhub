@@ -1,4 +1,6 @@
 <?php
+require_once 'root_vars.php';
+
 if (!isset($GLOBALS['site_title'])) {
   $GLOBALS['site_title'] = 'Sensor server';
 }

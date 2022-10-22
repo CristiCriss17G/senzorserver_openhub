@@ -1,4 +1,6 @@
 <?php
+require_once 'root_vars.php';
+
 
 // Include database class
 // require_once 'database.php';
