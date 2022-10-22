@@ -1,28 +1,22 @@
 <?php
 
-include_once dirname(__FILE__) . '/database/local_db.php';
-include_once dirname(__FILE__) . '/database/local_db_secure2.php';
+require_once 'root_vars.php';
 
 
 // conect
-$db = new local_db();
-
-// Create local database secure object
-$db_secure = new local_db_secure(dirname(__FILE__) . '/database/databases/db_api.txt', 'a+');
+$db = new my_sqlite3();
 
 
 $data = json_decode(file_get_contents('php://input'), true);
 if (isset($data['apikey'])) {
-    $apikey = $data['apikey'];
+    $apikey = base64_encode($data['apikey']);
 
     // check if apikey is valid
-    foreach ($db_secure->read() as $row) {
-        if ($row['key'] == $apikey) {
+    $api_key_check = $db->get_row("SELECT ID FROM sensors WHERE api_key = '{$apikey}'");
 
-            $db->delete();
-        }
+    if (!empty($api_key_check)) {
+        $db->empty_table('sensordata');
     }
-
 
     // sent json response with success message
     echo json_encode(array('success' => true));

@@ -1,32 +1,57 @@
 <?php
+require_once 'root_vars.php';
+
 include dirname(__FILE__) . '/header.php';
 // include_once 'database.php';
 include_once dirname(__FILE__) . '/database/local_db.php';
 
 ?>
 
-<div class="container mt-5 py-5">
+<div class="container mt-3 py-4">
     <form role="form" method="post" action="./post_request.php">
         <div class="row align-items-center">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
                 <div class="mb-2">
-                    <label for="regdate" class="form-label">Registry date</label>
-                    <input type="datetime-local" step="1" class="form-control" id="regdate" name="regdate" aria-describedby="datehelp">
+                    <label for="date_time" class="form-label">Registry date</label>
+                    <input type="datetime-local" step="1" class="form-control" id="date_time" name="date_time" aria-describedby="datehelp">
                     <div class="form-text" id="datehelp">To use the current time leave empty</div>
                 </div>
             </div>
+            <div class="col-lg-2 mb-2">
+                <label for="temperature_c" class="form-label">Temperature ℃</label>
+                <input class="form-control" id="temperature_c" name="temperature_c" type="number" step="0.01">
+            </div>
+            <div class="col-lg-2 mb-2">
+                <label for="humidity " class="form-label">Humidity</label>
+                <input type="number" class="form-control" id="humidity " name="humidity" step="0.01">
+            </div>
+            <div class="col-lg-2 mb-2">
+                <label for="pm2_5 " class="form-label">Air quality PM 2.5</label>
+                <input type="number" class="form-control" id="pm2_5 " name="pm2_5" step="0.01">
+            </div>
+            <div class="col-lg-2 mb-2">
+                <label for="pm10 " class="form-label">Air quality PM 10</label>
+                <input type="number" class="form-control" id="pm10 " name="pm10" step="0.01">
+            </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4 mb-2">
-                <label for="regdata" class="form-label">Registry data</label>
-                <textarea class="form-control" id="regdata" name="regdata" rows="3"></textarea>
+                <label for="GPS_lat" class="form-label">GPS latitude</label>
+                <input type="number" class="form-control" id="GPS_lat" name="GPS_lat" step="0.0000001">
             </div>
-            <input type="hidden" name="fromhome" value="1">
+            <div class="col-lg-4 mb-2">
+                <label for="GPS_lon" class="form-label">GPS longitude</label>
+                <input type="number" class="form-control" id="GPS_lon" name="GPS_lon" step="0.0000001">
+            </div>
+            <div class="col-lg-4 mb-2">
+                <label for="GPS_vit" class="form-label">GPS speed</label>
+                <input type="number" class="form-control" id="GPS_vit" name="GPS_vit" step="0.01" value="0.0">
+            </div>
+        </div>
+        <div class="row justify-content-center text-center">
             <input type="hidden" id="apikey" name="apikey" value="1">
-            <div class="col-lg-3 mb-2">
-                <label for="reggps" class="form-label">Registry GPS</label>
-                <input type="text" class="form-control" id="reggps" name="reggps" aria-describedby="gpsHelp">
-                <div class="form-text" id="gpsHelp">To use the current GPS leave empty</div>
-            </div>
-            <div class="col-lg-2"><button type="submit" class="btn btn-primary">Submit</button></div>
+            <input type="hidden" name="fromhome" value="1">
+            <div class="col-lg-4"><button type="submit" class="btn btn-primary w-100">Submit</button></div>
         </div>
     </form>
 </div>
@@ -41,14 +66,19 @@ include_once dirname(__FILE__) . '/database/local_db.php';
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped no-name" id="data-entries">
+            <table class="table table-striped table-striped-columns table-hover no-name" id="data-entries">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col" class="name-api">Name</th>
                         <th scope="col">Registry date</th>
-                        <th scope="col">Registry data</th>
-                        <th scope="col">Registry GPS</th>
+                        <th scope="col">Temperature ℃</th>
+                        <th scope="col">Humidity</th>
+                        <th scope="col">Air quality PM 2.5</th>
+                        <th scope="col">Air quality PM 10</th>
+                        <th scope="col">GPS latitude</th>
+                        <th scope="col">GPS longitude</th>
+                        <th scope="col">GPS speed</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,7 +89,7 @@ include_once dirname(__FILE__) . '/database/local_db.php';
     </div>
 </div>
 
-<script src="./assets/js/homeUpdate.js"></script>
+<script src="./assets/js/main.js"></script>
 
 <?php
 include dirname(__FILE__) . '/footer.php';

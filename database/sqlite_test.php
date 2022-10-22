@@ -6,35 +6,35 @@ function highlight_array($array, $name = 'var') {
    highlight_string("<?php\n\$$name =\n" . var_export($array, true) . ";\n?>");
 }
 
-$db = new my_sqlite3();
-$db->maybe_create_table(
-   "variousdata",
-   array(
-      'ID' => array('type' => 'INTEGER', 'options' => array('primary_key', 'auto_increment')),
-      'varchartext' => array('type' => 'VARCHAR(255)'),
-      'post_content' => array('type' => 'TEXT'),
-      'date' => array('type' => 'DATE'),
-      'time' => array('type' => 'TIME'),
-      'timestamp' => array('type' => 'TIMESTAMP'),
-      'boolean' => array('type' => 'BOOLEAN'),
-      'float' => array('type' => 'REAL'),
-   )
-);
+// $db = new my_sqlite3();
+// $db->maybe_create_table(
+//    "variousdata",
+//    array(
+//       'ID' => array('type' => 'INTEGER', 'options' => array('primary_key', 'auto_increment')),
+//       'varchartext' => array('type' => 'VARCHAR(255)'),
+//       'post_content' => array('type' => 'TEXT'),
+//       'date' => array('type' => 'DATE'),
+//       'time' => array('type' => 'TIME'),
+//       'timestamp' => array('type' => 'TIMESTAMP'),
+//       'boolean' => array('type' => 'BOOLEAN'),
+//       'float' => array('type' => 'REAL'),
+//    )
+// );
 
-$db->insert(
-   "variousdata",
-   array(
-      'varchartext' => 'This is a varchar',
-      'post_content' => 'This is a text',
-      'date' => '2013-01-01',
-      'time' => '12:00:00',
-      'timestamp' => '2013-01-01 12:00:00',
-      'boolean' => true,
-      'float' => floatval('2.234174156789'),
-   )
-);
+// $db->insert(
+//    "variousdata",
+//    array(
+//       'varchartext' => 'This is a varchar',
+//       'post_content' => 'This is a text',
+//       'date' => '2013-01-01',
+//       'time' => '12:00:00',
+//       'timestamp' => '2013-01-01 12:00:00',
+//       'boolean' => true,
+//       'float' => floatval('2.234174156789'),
+//    )
+// );
 
-highlight_array($db->get_results("SELECT * FROM variousdata"));
+// highlight_array($db->get_results("SELECT * FROM variousdata"));
 
 // echo $db->my_last_error;
 

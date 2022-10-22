@@ -1,7 +1,8 @@
 <?php
 
-
-define('DB_NAME', 'databases/senzorRebooters.db');
+if (!defined('DB_NAME')) {
+    define('DB_NAME', dirname(__FILE__) . 'database/databases/senzorRebooters.db');
+}
 
 if (!class_exists('SQLite3'))
     die("SQLite 3 NOT supported.");
@@ -9,7 +10,7 @@ if (!class_exists('SQLite3'))
 if (!class_exists('my_sqlite3')) {
     class my_sqlite3 extends SQLite3
     {
-        private $accepted_column_types = array('INTEGER', 'REAL', 'VARCHAR', 'TEXT', 'BLOB', 'NUMERIC', 'BOOLEAN', 'DATE', 'TIME', 'TIMESTAMP');
+        private $accepted_column_types = array('INTEGER', 'REAL', 'VARCHAR', 'TEXT', 'BLOB', 'NUMERIC', 'BOOLEAN');
         public $my_last_error = '';
 
         function __construct()
@@ -24,7 +25,7 @@ if (!class_exists('my_sqlite3')) {
          * @param string $args Any additional arguments to pass to the CREATE TABLE query
          * @return bool
          */
-        public function maybe_create_table( $table_name, $columns, $args="" )
+        public function maybe_create_table($table_name, $columns, $args = "")
         {
             $sql = "CREATE TABLE IF NOT EXISTS $table_name (";
             $create_ddl = "";
@@ -41,7 +42,7 @@ if (!class_exists('my_sqlite3')) {
                 $column_options = "";
                 if (isset($attributes['options'])) {
                     foreach ($attributes['options'] as $option) {
-                        switch($option) {
+                        switch ($option) {
                             case 'primary_key':
                                 $column_options .= " PRIMARY KEY";
                                 break;
@@ -62,7 +63,9 @@ if (!class_exists('my_sqlite3')) {
                 }
                 $create_ddl .= "$column {$attributes['type']} {$column_options}, ";
             }
-            $create_ddl = rtrim($create_ddl, ", ");
+            if (empty($args)) {
+                $create_ddl = rtrim($create_ddl, ", ");
+            }
             $sql .= $create_ddl . $args . ");";
             $this->exec($sql);
             // var_dump($sql);
@@ -73,7 +76,7 @@ if (!class_exists('my_sqlite3')) {
         /**
          * Run a query and return the results
          * @param string $query The query to run
-         * @return array
+         * @return array|bool An array of results or false if there was an error
          */
         public function myquery($query)
         {
@@ -84,7 +87,7 @@ if (!class_exists('my_sqlite3')) {
                 $results[] = $row;
             }
 
-            return $results;
+            return !empty($results) ? $results : false;
         }
 
         /**
@@ -141,7 +144,6 @@ if (!class_exists('my_sqlite3')) {
             }
 
             return true;
-
         }
 
         /**
@@ -239,11 +241,16 @@ if (!class_exists('my_sqlite3')) {
             return $this->myquery($query);
         }
 
+        /**
+         * Get the first row of a query
+         * @param string $query The query to run
+         * @return array|bool An array of results or false if there was an error
+         */
         public function get_row($query)
         {
             $results = $this->myquery($query);
 
-            return $results[0];
+            return !empty($results) ? $results[0] : false;
         }
 
         public function delete($table, $id)
@@ -264,6 +271,22 @@ if (!class_exists('my_sqlite3')) {
 
             return true;
         }
+
+        /**
+         * Empty a database table and reset the autoincrement
+         * @param string $table The name of the table to empty
+         * @return bool
+         */
+        public function empty_table($table)
+        {
+            $result = $this->exec("DELETE FROM {$table};");
+            $result = $this->exec("DELETE FROM sqlite_sequence WHERE name='{$table}';");
+
+            if ($result === false) {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
-
