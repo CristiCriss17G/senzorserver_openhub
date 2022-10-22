@@ -1,9 +1,7 @@
 <?php
 require_once 'root_vars.php';
 
-include dirname(__FILE__) . '/header.php';
-// include_once 'database.php';
-include_once dirname(__FILE__) . '/database/local_db.php';
+include ABSPATH . '/header.php';
 
 ?>
 
@@ -66,25 +64,26 @@ include_once dirname(__FILE__) . '/database/local_db.php';
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped table-striped-columns table-hover no-name" id="data-entries">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col" class="name-api">Name</th>
-                        <th scope="col">Registry date</th>
-                        <th scope="col">Temperature ℃</th>
-                        <th scope="col">Humidity</th>
-                        <th scope="col">Air quality PM 2.5</th>
-                        <th scope="col">Air quality PM 10</th>
-                        <th scope="col">GPS latitude</th>
-                        <th scope="col">GPS longitude</th>
-                        <th scope="col">GPS speed</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-striped table-striped-columns table-hover no-name" id="data-entries">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col" class="name-api">Name</th>
+                            <th scope="col">Registry date</th>
+                            <th scope="col">Temperature ℃</th>
+                            <th scope="col">Humidity</th>
+                            <th scope="col">Air quality PM 2.5</th>
+                            <th scope="col">Air quality PM 10</th>
+                            <th scope="col">GPS latitude</th>
+                            <th scope="col">GPS longitude</th>
+                            <th scope="col">GPS speed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

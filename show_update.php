@@ -7,18 +7,24 @@ $result = $db->myquery("SELECT sensors.ID, sensors.sensor_name, sensordata.reg_I
 // $result = array_reverse($result, true);
 // var_dump($result);
 if (!empty($result)) {
-    foreach ($result as $row) {
-        echo '<tr>';
-        echo '<th scope="row">' . $row['reg_ID'] . '</th>';
-        echo '<td>' . $row['sensor_name'] . '</td>';
-        echo '<td>' . $row['date_time'] . '</td>';
-        echo '<td>' . $row['temperature_c'] . '</td>';
-        echo '<td>' . $row['humidity'] . '</td>';
-        echo '<td>' . $row['pm2_5'] . '</td>';
-        echo '<td>' . $row['pm10'] . '</td>';
-        echo '<td>' . $row['GPS_lat'] . '</td>';
-        echo '<td>' . $row['GPS_lon'] . '</td>';
-        echo '<td>' . $row['GPS_vit'] . '</td>';
-        echo '</tr>';
-    }
+    // send the data as json
+    header('Content-Type: application/json');
+    echo json_encode($result);
+    
+
+
+    // foreach ($result as $row) {
+    //     echo '<tr>';
+    //     echo '<th scope="row">' . $row['reg_ID'] . '</th>';
+    //     echo '<td>' . $row['sensor_name'] . '</td>';
+    //     echo '<td>' . $row['date_time'] . '</td>';
+    //     echo '<td>' . $row['temperature_c'] . '</td>';
+    //     echo '<td>' . $row['humidity'] . '</td>';
+    //     echo '<td>' . $row['pm2_5'] . '</td>';
+    //     echo '<td>' . $row['pm10'] . '</td>';
+    //     echo '<td>' . $row['GPS_lat'] . '</td>';
+    //     echo '<td>' . $row['GPS_lon'] . '</td>';
+    //     echo '<td>' . $row['GPS_vit'] . '</td>';
+    //     echo '</tr>';
+    // }
 }
