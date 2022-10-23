@@ -32,6 +32,20 @@ toggleNames.addEventListener("click", () => {
   }
 });
 
+// toggle map button
+const toggleMap = document.getElementById("toggle-map");
+toggleMap.addEventListener("click", () => {
+  document.querySelectorAll(".map-el").forEach((el) => {
+    el.classList.toggle("no-map");
+  });
+
+  if (toggleMap.innerHTML === "Hide Names") {
+    toggleMap.innerHTML = "Show Map";
+  } else {
+    toggleMap.innerHTML = "Hide Map";
+  }
+});
+
 // empty database button
 const emptyDatabase = document.getElementById("empty-database");
 emptyDatabase.addEventListener("click", () => {
@@ -56,6 +70,8 @@ emptyDatabase.addEventListener("click", () => {
       });
   }
 });
+
+let sensorsLastRecording = {};
 
 // get content from show_update.php every 10 seconds and put it in the table with the id data-entries without jquery
 const tableBody = document
@@ -115,20 +131,47 @@ const refreshAndGetData = () => {
           tableBody.appendChild(row);
         });
 
+        // store just the latest data for every sensor, considering that the data is sorted from newest to oldest
+        // check if the data has location, if not, take it from the newest data that has location
+        sensorsLastRecording = {};
+        data.forEach((entry) => {
+          if (!sensorsLastRecording[entry.ID]) {
+            sensorsLastRecording[entry.ID] = entry;
+          }
+          if (
+            (!sensorsLastRecording[entry.ID].GPS_lat ||
+              !sensorsLastRecording[entry.ID].GPS_lon) &&
+            entry.GPS_lat &&
+            entry.GPS_lon
+          ) {
+            sensorsLastRecording[entry.ID].GPS_lat = entry.GPS_lat;
+            sensorsLastRecording[entry.ID].GPS_lon = entry.GPS_lon;
+            sensorsLastRecording[entry.ID].GPS_vit = entry.GPS_vit;
+          }
+        });
+
+        // send data to map and generate markers
+        window.updateMarkers(sensorsLastRecording);
+
         lastUpdate = data[0].reg_ID;
         clearInterval(refreshInterval);
-        // console.log(
-        //   `fast update since ${Math.floor(Date.now() / 1000) - now} seconds`
-        // );
+        console.log(
+          `fast update since ${Math.floor(Date.now() / 1000) - now} seconds`
+        );
         refreshInterval = setInterval(refreshAndGetData, 2000);
       } else {
         clearInterval(refreshInterval);
-        // console.log(
-        //   `slow update since ${Math.floor(Date.now() / 1000) - now} seconds`
-        // );
+        console.log(
+          `slow update since ${Math.floor(Date.now() / 1000) - now} seconds`
+        );
         refreshInterval = setInterval(refreshAndGetData, 10000);
       }
     });
 };
-refreshAndGetData();
-let refreshInterval = setInterval(refreshAndGetData, 10000);
+
+let refreshInterval;
+
+document.addEventListener("DOMContentLoaded", () => {
+  refreshAndGetData();
+  refreshInterval = setInterval(refreshAndGetData, 10000);
+});
