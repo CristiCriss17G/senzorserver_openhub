@@ -5,6 +5,11 @@ require_once 'root_vars.php';
 // Create local database object 
 $db = new my_sqlite3();
 
+$result = array(
+    'status' => 'error',
+    'message' => 'No data received',
+);
+
 // insert post data into database
 if (count($_POST) > 0) {
     // var_dump($_POST);
@@ -44,7 +49,10 @@ if (count($_POST) > 0) {
         }
 
         $received_data['sensor_ID'] = $api_key_check['ID'];
-        $db->insert('sensordata', $received_data);
+        if ($db->insert('sensordata', $received_data)) {
+            $result['status'] = 'success';
+            $result['message'] = 'Data received';
+        }
     }
 } else {
     // data can be json
@@ -87,12 +95,17 @@ if (count($_POST) > 0) {
             }
 
             $received_data['sensor_ID'] = $api_key_check['ID'];
-            $db->insert('sensordata', $received_data);
-
+            if ($db->insert('sensordata', $received_data)) {
+                $result['status'] = 'success';
+                $result['message'] = 'Data received';
+            }
         }
-        
     }
 }
+
+// return result
+header('Content-Type: application/json');
+echo json_encode($result);
 
 if (isset($_POST['fromhome'])) {
     header('Location: ./');
