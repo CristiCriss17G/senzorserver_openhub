@@ -1,4 +1,6 @@
 <?php
+require_once 'root_vars.php';
+
 if (!isset($GLOBALS['site_title'])) {
   $GLOBALS['site_title'] = 'Sensor server';
 }
@@ -11,7 +13,8 @@ if (!isset($GLOBALS['site_title'])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $GLOBALS['site_title']; ?></title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -29,16 +32,16 @@ if (!isset($GLOBALS['site_title'])) {
               <a class="nav-link" aria-current="page" href="./">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Database settings</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./post_request.php">Post request</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./get_request.php">Get request</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="./database_create.php">Create database</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./api_generator.php">API Key generator</a>
             </li>
           </ul>
         </div>

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "netsilik/peppered-passwords": "^2.0",
+        "twbs/bootstrap": "5.2.2"
+    }
+}
