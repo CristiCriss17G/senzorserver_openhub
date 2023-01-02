@@ -5,7 +5,7 @@ include ABSPATH . '/header.php';
 
 ?>
 
-<div class="container mt-3 py-4">
+<section class="container mt-3 py-4">
     <form role="form" method="post" action="./post_request.php">
         <div class="row align-items-center">
             <div class="col-lg-4">
@@ -52,13 +52,24 @@ include ABSPATH . '/header.php';
             <div class="col-lg-4"><button type="submit" class="btn btn-primary w-100">Submit</button></div>
         </div>
     </form>
-</div>
+</section>
+
+<hr class="map-el no-map">
+<section class="container my-3 map-el no-map">
+    <div class="row">
+        <div class="col-12">
+        <div id="map"></div>
+        </div>
+    </div>
+</section>
+
 <hr>
 
-<div class="container">
+<section class="container">
     <div class="row mb-4">
         <div class="col-md-12 d-flex justify-content-between">
             <button id="toggle-names" class="btn btn-outline-info">Show names</button>
+            <button id="toggle-map" class="btn btn-outline-success">Show map</button>
             <button id="empty-database" class="btn btn-outline-danger">Empty Database</button>
         </div>
     </div>
@@ -86,9 +97,14 @@ include ABSPATH . '/header.php';
             </div>
         </div>
     </div>
-</div>
+</section>
 
+<script src="./assets/js/map.js" type="module"></script>
 <script src="./assets/js/main.js"></script>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly"
+defer
+></script>
 
 <?php
 include dirname(__FILE__) . '/footer.php';

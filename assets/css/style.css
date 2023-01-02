@@ -1,4 +1,13 @@
 #data-entries.no-name tbody tr td:first-of-type,
-#data-entries.no-name thead tr th.name-api {
+#data-entries.no-name thead tr th.name-api,
+.no-map {
   display: none;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
 }
