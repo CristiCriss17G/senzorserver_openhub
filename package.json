@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap-icons": "^1.10.3",
+    "boxicons": "^2.1.4",
+    "glightbox": "^3.2.0",
+    "isotope-layout": "^3.0.6",
+    "swiper": "^8.4.5"
+  },
+  "name": "senzorserver_openhub",
+  "description": "This is a simple server application that can be used to test the a sensors capabilities to send data.",
+  "version": "1.1.0",
+  "main": "index.php",
+  "devDependencies": {},
+  "scripts": {
+    "test": "php index.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristiCriss17G/senzorserver_openhub.git"
+  },
+  "author": "Cristian Iordachescu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristiCriss17G/senzorserver_openhub/issues"
+  },
+  "homepage": "https://github.com/CristiCriss17G/senzorserver_openhub#readme"
+}
