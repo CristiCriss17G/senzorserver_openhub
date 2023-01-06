@@ -108,7 +108,7 @@ img {
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 90px;
+  height: fit-content;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -138,6 +138,10 @@ img {
   animation: Rotation 5s infinite ease-in-out alternate;
 }
 
+#header {
+  padding: 20px 0;
+}
+
 @keyframes Rotation {
   0% {
     transform: rotate3d(0, 0, 0, 0deg);
@@ -153,11 +157,11 @@ img {
   }
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   #header {
     height: 70px;
   }
-}
+} */
 
 .scrolled-offset {
   margin-top: 90px;
@@ -193,11 +197,11 @@ img {
 
 .navbar a,
 .navbar a:focus {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-size: 15px;
+  justify-content: space-between; */
+  padding: 10px 30px;
+  /* font-size: 15px; */
   color: #151515;
   text-transform: uppercase;
   white-space: nowrap;
@@ -299,7 +303,7 @@ img {
   color: var(--light);
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
   }
@@ -307,9 +311,9 @@ img {
   .navbar ul {
     display: none;
   }
-}
+} */
 
-.navbar-mobile {
+/* .navbar-mobile {
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -390,7 +394,7 @@ img {
 
 .navbar-mobile .dropdown > .dropdown-active {
   display: block;
-}
+} */
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -608,7 +612,7 @@ section {
   right: 0;
   height: 40px;
   opacity: 0;
-  transition: bottom ease-in-out 0.4s;
+  transition: bottom ease-in-out 0.4s, opacity ease-in-out 0.4s;
   background: var(--primarycolor_opacity);
   display: flex;
   align-items: center;

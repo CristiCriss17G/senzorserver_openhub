@@ -1,13 +1,95 @@
 <?php
 require_once 'root_vars.php';
 
+$GLOBALS['hero'] = true;
+
 include ABSPATH . '/header.php';
 
 ?>
 
+<main>
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Echipa noastra</h2>
+                <p>Studenti in cadrul universitatii "Dunarea de Jos" Galati</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="zoom-in">
+                        <div class="member-img">
+                            <img src="assets/images/team/claudia_anghel.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href="https://www.facebook.com/claudia.anghel.376"><i class="bi bi-facebook"></i></a>
+                                <!-- <a href="https://www.instagram.com/creanga_alexandru/"
+                      ><i class="bi bi-instagram"></i
+                    ></a> -->
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Claudia Anghel</h4>
+                            <span>Anul IV ____</span>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="assets/images/team/Iordachescu.webp" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href="https://www.facebook.com/iordachescu.cristian1"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.linkedin.com/in/cristian-iordachescu-83674462/"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Cristian Iordachescu</h4>
+                            <span>Anul II Calculatoare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member-img">
+                            <img src="assets/images/team/andrei_labus.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href="https://www.facebook.com/andreilabus.andreilabus"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Andrei Labus</h4>
+                            <span>Anul III ___ </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="member-img">
+                            <img src="assets/images/team/mihai_podaru.jpg" class="img-fluid" alt="" />
+                            <div class="social">
+                                <a href="https://www.facebook.com/podaru.mihai.33"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Mihai Podaru</h4>
+                            <span>Anul III ___</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Team Section -->
+</main>
+
 <section class="container mt-3 py-4">
     <form role="form" method="post" action="./post_request.php">
-        <div class="row align-items-center">
+        <div class="row align-items-start">
             <div class="col-lg-4">
                 <div class="mb-2">
                     <label for="date_time" class="form-label">Registry date</label>
@@ -58,7 +140,7 @@ include ABSPATH . '/header.php';
 <section class="container my-3 map-el no-map">
     <div class="row">
         <div class="col-12">
-        <div id="map"></div>
+            <div id="map"></div>
         </div>
     </div>
 </section>
@@ -101,10 +183,7 @@ include ABSPATH . '/header.php';
 
 <script src="./assets/js/map.js" type="module"></script>
 <script src="./assets/js/main.js"></script>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly"
-defer
-></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly" defer></script>
 
 <?php
 include dirname(__FILE__) . '/footer.php';

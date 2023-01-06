@@ -1,7 +1,9 @@
 <?php
 
+if (!defined('DB_FOLDER')) define('DB_FOLDER', dirname(__FILE__) . '/databases/');
+
 if (!defined('DB_NAME')) {
-    define('DB_NAME', dirname(__FILE__) . 'database/databases/senzorRebooters.db');
+    define('DB_NAME', DB_FOLDER . 'senzorRebooters.db');
 }
 
 if (!class_exists('SQLite3'))
@@ -15,7 +17,15 @@ if (!class_exists('my_sqlite3')) {
 
         function __construct()
         {
-            $this->open(DB_NAME);
+            try {
+                // if folder doesn't exist, create it
+                if (!file_exists(DB_FOLDER)) {
+                    mkdir(DB_FOLDER, 0777, true);
+                }
+                $this->open(DB_NAME);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
 
         /**

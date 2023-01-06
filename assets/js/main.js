@@ -1,6 +1,6 @@
 // add apikey to form
 const apikey =
-  "3bbec1ff4d460ba783e4861ce6e0993d2a9fec762f59cebd437a49b9a7fbc3d5";
+  "288dd638918871ab52fc06ff285ad968aa97dbde27b96cb2f08241e8b5b877f5";
 const apiInput = document.querySelector("#apikey");
 apiInput.value = apikey;
 

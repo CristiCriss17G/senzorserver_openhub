@@ -31,51 +31,64 @@ if (!isset($GLOBALS['site_title'])) {
 </head>
 
 <body>
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <a href="./" class="hero-logo" data-aos="zoom-in"><img class="img-fluid" src="assets/images/Rebooters logo.svg" alt="" /></a>
-      <h1 data-aos="zoom-in">
-        Bine ati venit pe site-ul echipei <span>Rebooters</span>
-      </h1>
-      <h2 data-aos="fade-up">
-        Acesta este site-ul proiectului pentru DanubeAir 2022.
-      </h2>
-      <a data-aos="fade-up" data-aos-delay="200" href="#team" class="btn-get-started scrollto">Sa incepem!</a>
-    </div>
-  </section>
-  <!-- End Hero -->
-
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo">
-        <a href="./"><img src="assets/images/Rebooters logo.svg" alt="" class="img-fluid" /></a>
+  <?php
+  // display hero only if home page
+  if (isset($GLOBALS['hero']) && $GLOBALS['hero']) {
+  ?>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+      <div class="hero-container">
+        <a href="./" class="hero-logo" data-aos="zoom-in"><img class="img-fluid" src="assets/images/Rebooters logo.svg" alt="" /></a>
+        <h1 data-aos="zoom-in">
+          Bine ati venit pe site-ul echipei <span>Rebooters</span>
+        </h1>
+        <h2 data-aos="fade-up">
+          Acesta este site-ul proiectului pentru DanubeAir 2022.
+        </h2>
+        <a data-aos="fade-up" data-aos-delay="200" href="#team" class="btn-get-started scrollto">Sa incepem!</a>
       </div>
-      <nav class="navbar navbar-expand-lg text-center">
-        <div class="container-fluid">
+    </section>
+    <!-- End Hero -->
+  <?php
+  }
+  ?>
+
+  <header id="header">
+    <div class="container d-block d-lg-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <a href="./"><img src="assets/images/Rebooters logo.svg" alt="" class="img-fluid" /></a>
+        </div>
+        <div class="d-lg-none navbar navbar-expand-lg">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./post_request.php">Post request</a>
-              </li>
-              <!-- <li class="nav-item">
-              <a class="nav-link" href="./get_request.php">Get request</a>
-            </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="./database_create.php">Create database</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./api_generator.php">API Key generator</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </nav>
+      </div>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg text-center">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse pt-4 pt-lg-0" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./post_request.php">Post request</a>
+                </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="./get_request.php">Get request</a>
+              </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="./database_create.php">Create database</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./api_generator.php">API Key generator</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
