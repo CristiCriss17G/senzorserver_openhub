@@ -6,7 +6,7 @@
   --secondarycolor_opacity: rgba(48, 196, 129, 0.6);
   --secondarycolor_hover: #3edc9a;
   --light: #fff;
-  --hero-bg: url("../images/hero-bg.png");
+  --hero-bg: url("../images/hero-bg.webp");
 }
 
 *::-webkit-scrollbar {
@@ -782,4 +782,8 @@ section:not(.dashboard-section) {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#map {
+  height: 90vh;
 }

@@ -36,17 +36,19 @@ toggleNames.addEventListener("click", () => {
 
 // toggle map button
 const toggleMap = document.getElementById("toggle-map");
-toggleMap.addEventListener("click", () => {
-  document.querySelectorAll(".map-el").forEach((el) => {
-    el.classList.toggle("no-map");
-  });
+if (toggleMap) {
+  toggleMap.addEventListener("click", () => {
+    document.querySelectorAll(".map-el").forEach((el) => {
+      el.classList.toggle("no-map");
+    });
 
-  if (toggleMap.innerHTML === "Hide Names") {
-    toggleMap.innerHTML = "Show Map";
-  } else {
-    toggleMap.innerHTML = "Hide Map";
-  }
-});
+    if (toggleMap.innerHTML === "Hide Names") {
+      toggleMap.innerHTML = "Show Map";
+    } else {
+      toggleMap.innerHTML = "Hide Map";
+    }
+  });
+}
 
 // empty database button
 const emptyDatabase = document.getElementById("empty-database");

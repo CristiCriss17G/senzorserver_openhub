@@ -1,7 +1,7 @@
 <?php
 require_once 'root_vars.php';
 
-$GLOBALS['title'] = 'Dashboard Legacy - ' . $GLOBALS['title'];
+$GLOBALS['site_title'] = 'Dashboard Legacy - ' . $GLOBALS['site_title'];
 
 include ABSPATH . '/header.php';
 
@@ -107,3 +107,8 @@ include ABSPATH . '/header.php';
 <script src="./assets/js/map.js"></script>
 <script src="./assets/js/dashboard.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly" defer></script>
+
+
+<?php
+include ABSPATH . '/footer.php';
+?>

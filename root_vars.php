@@ -12,4 +12,4 @@ if (!defined('DB_NAME')) {
 
 require_once ABSPATH . 'database/my_sqlite_class.php';
 
-$GLOBALS['title'] = "Sensor server Rebooters";
+$GLOBALS['site_title'] = "Sensor server Rebooters";

@@ -14,6 +14,10 @@ if (!isset($GLOBALS['site_title'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $GLOBALS['site_title']; ?></title>
 
+  <link rel="shortcut icon" href="assets/images/favicon.webp" type="image/webp">
+
+  <meta name="theme-color" content="#2261a0">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
 
@@ -74,7 +78,7 @@ if (!isset($GLOBALS['site_title'])) {
                   <a class="nav-link" aria-current="page" href="./">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./dashboard-legacy.php">Dashboard</a>
+                  <a class="nav-link" href="./dashboard.php">Dashboard</a>
                   <!-- <ul>
                     <li class="nav-item">
                       <a class="nav-link" href="./dashboard-legacy.php">Dashboard Legacy</a>

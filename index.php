@@ -20,7 +20,7 @@ include ABSPATH . '/header.php';
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="zoom-in">
                         <div class="member-img">
-                            <img src="assets/images/team/claudia_anghel.jpg" class="img-fluid" alt="" />
+                            <img src="assets/images/team/claudia_anghel.webp" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href="https://www.facebook.com/claudia.anghel.376"><i class="bi bi-facebook"></i></a>
                             </div>
@@ -52,7 +52,7 @@ include ABSPATH . '/header.php';
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="zoom-in" data-aos-delay="200">
                         <div class="member-img">
-                            <img src="assets/images/team/andrei_labus.jpg" class="img-fluid" alt="" />
+                            <img src="assets/images/team/andrei_labus.webp" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href="https://www.facebook.com/andreilabus.andreilabus"><i class="bi bi-facebook"></i></a>
                             </div>
@@ -67,7 +67,7 @@ include ABSPATH . '/header.php';
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="zoom-in" data-aos-delay="300">
                         <div class="member-img">
-                            <img src="assets/images/team/mihai_podaru.jpg" class="img-fluid" alt="" />
+                            <img src="assets/images/team/mihai_podaru.webp" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href="https://www.facebook.com/podaru.mihai.33"><i class="bi bi-facebook"></i></a>
                             </div>
@@ -96,7 +96,7 @@ include ABSPATH . '/header.php';
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="image">
-                        <img src="assets/images/day1.jpg" class="img-fluid" alt="" />
+                        <img src="assets/images/day1.webp" class="img-fluid" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6 text" data-aos="fade-left">
@@ -120,7 +120,7 @@ include ABSPATH . '/header.php';
             <div class="row flex-row-reverse">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="image">
-                        <img src="assets/images/pitch.png" class="img-fluid" alt="" />
+                        <img src="assets/images/pitch.webp" class="img-fluid" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
@@ -143,7 +143,7 @@ include ABSPATH . '/header.php';
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="image">
-                        <img src="assets/images/more-work.jpg" class="img-fluid" alt="" />
+                        <img src="assets/images/more-work.webp" class="img-fluid" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
@@ -183,7 +183,7 @@ include ABSPATH . '/header.php';
                         <p class="fst-italic">
                             Acceseaza datele din baza de date
                         </p>
-                        <a href="./dashboard">
+                        <a href="./dashboard.php">
                             <button type="button" class="btn btn-primary">Dashboard</button>
                         </a>
                     </div>
@@ -203,5 +203,5 @@ include ABSPATH . '/header.php';
 
 
 <?php
-include dirname(__FILE__) . '/footer.php';
+include ABSPATH . '/footer.php';
 ?>
