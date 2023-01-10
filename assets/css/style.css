@@ -51,8 +51,14 @@ p {
   color: #000;
 }
 
-img {
-  min-width: 300px;
+.img-svg {
+  min-width: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+  .img-svg {
+    min-width: 300px;
+  }
 }
 
 #data-entries.no-name tbody tr td:first-of-type,
@@ -786,4 +792,9 @@ section:not(.dashboard-section) {
 
 #map {
   height: 90vh;
+}
+
+.accordion .table-responsive {
+  height: 65vh;
+  overflow: auto;
 }

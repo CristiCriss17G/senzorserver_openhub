@@ -42,7 +42,7 @@ if (!isset($GLOBALS['site_title'])) {
     <!-- ======= Hero Section ======= -->
     <section id="hero">
       <div class="hero-container">
-        <a href="./" class="hero-logo" data-aos="zoom-in"><img class="img-fluid" src="assets/images/Rebooters logo.svg" alt="" /></a>
+        <a href="./" class="hero-logo" data-aos="zoom-in"><img class="img-fluid img-svg" src="assets/images/Rebooters logo.svg" alt="" /></a>
         <h1 data-aos="zoom-in">
           Bine ati venit pe site-ul echipei <span>Rebooters</span>
         </h1>
@@ -61,7 +61,7 @@ if (!isset($GLOBALS['site_title'])) {
     <div class="container d-block d-lg-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <a href="./"><img src="assets/images/Rebooters logo.svg" alt="" class="img-fluid" /></a>
+          <a href="./"><img src="assets/images/Rebooters logo.svg" alt="" class="img-fluid img-svg" /></a>
         </div>
         <div class="d-lg-none navbar navbar-expand-lg">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
