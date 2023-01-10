@@ -108,6 +108,9 @@ header('Content-Type: application/json');
 echo json_encode($result);
 
 if (isset($_POST['fromhome'])) {
-    header('Location: ./');
+    // get page from witch the request was made
+    $page = $_SERVER['HTTP_REFERER'];
+    // redirect to that page
+    header("Location: $page");
     exit;
 }

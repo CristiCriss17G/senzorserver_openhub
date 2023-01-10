@@ -6,6 +6,7 @@
   --secondarycolor_opacity: rgba(48, 196, 129, 0.6);
   --secondarycolor_hover: #3edc9a;
   --light: #fff;
+  --hero-bg: url("../images/hero-bg.png");
 }
 
 *::-webkit-scrollbar {
@@ -402,7 +403,7 @@ img {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../images/hero-bg.png");
+  background: var(--hero-bg);
   position: relative;
 }
 
@@ -519,7 +520,7 @@ img {
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
-section {
+section:not(.dashboard-section) {
   padding: 60px 0;
   overflow: hidden;
 }
@@ -760,7 +761,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   position: relative;
-  background-image: url("../img/hero-bg.png");
+  background-image: var(--hero-bg);
   height: 75px;
   display: flex;
   justify-content: center;

@@ -23,14 +23,11 @@ include ABSPATH . '/header.php';
                             <img src="assets/images/team/claudia_anghel.jpg" class="img-fluid" alt="" />
                             <div class="social">
                                 <a href="https://www.facebook.com/claudia.anghel.376"><i class="bi bi-facebook"></i></a>
-                                <!-- <a href="https://www.instagram.com/creanga_alexandru/"
-                      ><i class="bi bi-instagram"></i
-                    ></a> -->
                             </div>
                         </div>
                         <div class="member-info">
                             <h4>Claudia Anghel</h4>
-                            <span>Anul IV ____</span>
+                            <span>Anul IV Automatica</span>
                             <p></p>
                         </div>
                     </div>
@@ -62,7 +59,7 @@ include ABSPATH . '/header.php';
                         </div>
                         <div class="member-info">
                             <h4>Andrei Labus</h4>
-                            <span>Anul III ___ </span>
+                            <span>Anul III Automatica</span>
                         </div>
                     </div>
                 </div>
@@ -77,7 +74,7 @@ include ABSPATH . '/header.php';
                         </div>
                         <div class="member-info">
                             <h4>Mihai Podaru</h4>
-                            <span>Anul III ___</span>
+                            <span>Anul III Automatica</span>
                         </div>
                     </div>
                 </div>
@@ -85,105 +82,125 @@ include ABSPATH . '/header.php';
         </div>
     </section>
     <!-- End Team Section -->
-</main>
 
-<section class="container mt-3 py-4">
-    <form role="form" method="post" action="./post_request.php">
-        <div class="row align-items-start">
-            <div class="col-lg-4">
-                <div class="mb-2">
-                    <label for="date_time" class="form-label">Registry date</label>
-                    <input type="datetime-local" step="1" class="form-control" id="date_time" name="date_time" aria-describedby="datehelp">
-                    <div class="form-text" id="datehelp">To use the current time leave empty</div>
+    <!-- ======= About project Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Despre proiectul nostru</h2>
+                <p>
+                    Realizarea unui sistem de monitorizare, a temperaturii, a umiditatii și a noxelor dintr-o anumită locație.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="image">
+                        <img src="assets/images/day1.jpg" class="img-fluid" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6 text" data-aos="fade-left">
+                    <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
+                        <h3>Prima zi</h3>
+                        <p class="fst-italic">
+                            Inceputul este mereu cel mai greu
+                        </p>
+                        <ul>
+                            <li><i class="bx bx-check-double"></i>Am deschis si am început asmblarea senzorilor</li>
+                            <li><i class="bx bx-check-double"></i>Ne-am pregătit și instalat librăriile pentru a interacționa cu senzori</li>
+                            <li><i class="bx bx-check-double"></i>Am început design-ul carcasei</li>
+                        </ul>
+                        <p>
+                            Dupa ce ne-am obisnuit cu atmosfera fiecare a inceput sa lucreze. Ne-am instalat ArduinoIDE și PlatformIO si am inceput sa ne documentam despre tema. Usor ne-am dat seama ca nu o sa fie atat de usor cat am crezut, dar asta nu ne-a determinat sa nu tragem mai tare si sa ne dorim sa castigam.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2 mb-2">
-                <label for="temperature_c" class="form-label">Temperature ℃</label>
-                <input class="form-control" id="temperature_c" name="temperature_c" type="number" step="0.01">
-            </div>
-            <div class="col-lg-2 mb-2">
-                <label for="humidity " class="form-label">Humidity</label>
-                <input type="number" class="form-control" id="humidity " name="humidity" step="0.01">
-            </div>
-            <div class="col-lg-2 mb-2">
-                <label for="pm2_5 " class="form-label">Air quality PM 2.5</label>
-                <input type="number" class="form-control" id="pm2_5 " name="pm2_5" step="0.01">
-            </div>
-            <div class="col-lg-2 mb-2">
-                <label for="pm10 " class="form-label">Air quality PM 10</label>
-                <input type="number" class="form-control" id="pm10 " name="pm10" step="0.01">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 mb-2">
-                <label for="GPS_lat" class="form-label">GPS latitude</label>
-                <input type="number" class="form-control" id="GPS_lat" name="GPS_lat" step="0.0000001">
-            </div>
-            <div class="col-lg-4 mb-2">
-                <label for="GPS_lon" class="form-label">GPS longitude</label>
-                <input type="number" class="form-control" id="GPS_lon" name="GPS_lon" step="0.0000001">
-            </div>
-            <div class="col-lg-4 mb-2">
-                <label for="GPS_vit" class="form-label">GPS speed</label>
-                <input type="number" class="form-control" id="GPS_vit" name="GPS_vit" step="0.01" value="0.0">
-            </div>
-        </div>
-        <div class="row justify-content-center text-center">
-            <input type="hidden" id="apikey" name="apikey" value="1">
-            <input type="hidden" name="fromhome" value="1">
-            <div class="col-lg-4"><button type="submit" class="btn btn-primary w-100">Submit</button></div>
-        </div>
-    </form>
-</section>
 
-<hr class="map-el no-map">
-<section class="container my-3 map-el no-map">
-    <div class="row">
-        <div class="col-12">
-            <div id="map"></div>
-        </div>
-    </div>
-</section>
+            <div class="row flex-row-reverse">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="image">
+                        <img src="assets/images/pitch.png" class="img-fluid" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 text">
+                        <h3>După hackathon</h3>
+                        <p class="fst-italic">Totul incepe sa prinda forma</p>
+                        <ul>
+                            <li><i class="bx bx-check-double"></i>Avem o idee funcțională</li>
+                            <li><i class="bx bx-check-double"></i>Ne prezentam idea in față juriului</li>
+                            <li><i class="bx bx-check-double"></i>Am mai petrecut timp pe la sediul OpenHub pentru a îmbunătăți ideile</li>
+                            <li><i class="bx bx-check-double"></i>Am invatat lucruri noi in timp ce ne-am distrat</li>
+                        </ul>
+                        <p>
+                            Am lucrat pe brânci de când s-a terminat hackathonul pana am ajuns la un prototip funcțional de care ne putem mândri. Am invatat lucruri noi, am petrecut timp cu prietenii si am avut parte de o experienta deosebita.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-<hr>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="image">
+                        <img src="assets/images/more-work.jpg" class="img-fluid" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
+                        <h3>Pe drum spre produsul final</h3>
+                        <p class="fst-italic">
 
-<section class="container">
-    <div class="row mb-4">
-        <div class="col-md-12 d-flex justify-content-between">
-            <button id="toggle-names" class="btn btn-outline-info">Show names</button>
-            <button id="toggle-map" class="btn btn-outline-success">Show map</button>
-            <button id="empty-database" class="btn btn-outline-danger">Empty Database</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="table-responsive">
-                <table class="table table-striped table-striped-columns table-hover no-name" id="data-entries">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col" class="name-api">Name</th>
-                            <th scope="col">Registry date</th>
-                            <th scope="col">Temperature ℃</th>
-                            <th scope="col">Humidity</th>
-                            <th scope="col">Air quality PM 2.5</th>
-                            <th scope="col">Air quality PM 10</th>
-                            <th scope="col">GPS latitude</th>
-                            <th scope="col">GPS longitude</th>
-                            <th scope="col">GPS speed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+                        </p>
+                        <ul>
+                            <li><i class="bx bx-check-double"></i>Noi încercări de senzori</li>
+                            <li><i class="bx bx-check-double"></i>Altenative pentru transmiterea de date</li>
+                            <li><i class="bx bx-check-double"></i>Întâlnirea cu oameni cu cu diferite experiențe care ne-au ajutat și dat idee noi</li>
+                            <li><i class="bx bx-check-double"></i>Am folosit PHP pentru realizarea serverului de stoacre și vizualizare a datelor</li>
+                            <li><i class="bx bx-check-double"></i>Serverul hostat pe un localhost si poate accesat de oricine conectat la aceeasi retea de internet</li>
+                        </ul>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- End About Us Section -->
 
-<script src="./assets/js/map.js" type="module"></script>
-<script src="./assets/js/main.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly" defer></script>
+    <!-- ======= To dashboard Section ======= -->
+    <section id="dashboard" class="dashboard">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Dashboard</h2>
+                <p>Acceseaza datele din baza de date</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-down">
+                    <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 text-center">
+                        <h3>Acceseaza datele din baza de date</h3>
+                        <p class="fst-italic">
+                            Acceseaza datele din baza de date
+                        </p>
+                        <a href="./dashboard">
+                            <button type="button" class="btn btn-primary">Dashboard</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">Rebooters</footer>
+<!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
 
 <?php
 include dirname(__FILE__) . '/footer.php';
