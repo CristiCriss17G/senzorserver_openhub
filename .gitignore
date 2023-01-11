@@ -4,3 +4,4 @@ node_modules
 sezortest.session.sql
 .vscode
 vendor
+env.json

@@ -1,8 +1,7 @@
 "use strict";
 
 // add apikey to form
-const apikey =
-  "288dd638918871ab52fc06ff285ad968aa97dbde27b96cb2f08241e8b5b877f5";
+const apikey = document.currentScript.dataset.formApi;
 const apiInput = document.querySelector("#apikey");
 apiInput.value = apikey;
 

@@ -1,5 +1,8 @@
 <?php
 
+//open and parse file env.json
+$env = json_decode(file_get_contents('env.json'), true);
+
 if (!defined('ABSPATH')) {
     define('ABSPATH', dirname(__FILE__) . '/');
 }

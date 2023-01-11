@@ -105,8 +105,8 @@ include ABSPATH . '/header.php';
 
 
 <script src="./assets/js/map.js"></script>
-<script src="./assets/js/dashboard.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly" defer></script>
+<script src="./assets/js/dashboard.js" data-form-api="<?php echo $env['form_api'] ?>"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $env['maps_api'] ?>&callback=initMap&v=weekly" defer></script>
 
 
 <?php

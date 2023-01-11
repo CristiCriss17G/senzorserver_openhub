@@ -21,7 +21,7 @@ include ABSPATH . '/header.php';
                         <div class="accordion-collapse collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionData">
                             <div class="row m-0">
                                 <div class="col-md-12">
-                                    <form role="form" method="post" action="./post_request.php">
+                                    <form class="my-2" role="form" method="post" action="./post_request.php">
                                         <div class="row align-items-start my-1">
                                             <div class="col-lg-12">
                                                 <div class="mb-2">
@@ -82,13 +82,13 @@ include ABSPATH . '/header.php';
                             </button>
                         </h2>
                         <div class="accordion-collapse collapse show" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionData">
-                            <div class="row my-1">
+                            <div class="row mt-2 mb-0">
                                 <div class="col-md-12 d-flex justify-content-between">
                                     <button id="toggle-names" class="btn btn-outline-info">Show names</button>
                                     <button id="empty-database" class="btn btn-outline-danger">Empty Database</button>
                                 </div>
                             </div>
-                            <div class="row m-0">
+                            <div class="row my-2">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-striped-columns table-hover no-name" id="data-entries">
@@ -130,8 +130,8 @@ include ABSPATH . '/header.php';
 </main>
 
 <script src="./assets/js/map.js"></script>
-<script src="./assets/js/dashboard.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb6aXaGmNWlFwWSkMALiXf0b5FIEEGnLw&callback=initMap&v=weekly" defer></script>
+<script src="./assets/js/dashboard.js" data-form-api="<?php echo $env['form_api'] ?>"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $env['maps_api'] ?>&callback=initMap&v=weekly" defer></script>
 
 <?php
 include ABSPATH . '/footer.php';

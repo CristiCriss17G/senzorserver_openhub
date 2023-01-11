@@ -27,7 +27,7 @@ if (!isset($GLOBALS['site_title'])) {
   <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
   <link rel="stylesheet" href="node_modules/boxicons/css/boxicons.min.css">
   <link rel="stylesheet" href="node_modules/glightbox/dist/css/glightbox.min.css">
-  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
+  <!-- <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css"> -->
 
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css">
